@@ -368,12 +368,13 @@ export interface ApiQrCodeQrCode extends Schema.CollectionType {
     singularName: 'qr-code';
     pluralName: 'qr-codes';
     displayName: 'QR Codes';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    code: Attribute.Text;
+    code: Attribute.String & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "qr-code",
     "pluralName": "qr-codes",
-    "displayName": "QR Codes"
+    "displayName": "QR Codes",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "code": {
-      "type": "text"
+      "type": "string",
+      "unique": true
     }
   }
 }
