@@ -393,6 +393,43 @@ export interface ApiQrCodeQrCode extends Schema.CollectionType {
   };
 }
 
+export interface ApiQrCodeDataQrCodeData extends Schema.CollectionType {
+  collectionName: 'qr_codes_data';
+  info: {
+    singularName: 'qr-code-data';
+    pluralName: 'qr-codes-data';
+    displayName: 'QR Data';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    name: Attribute.String;
+    processingMethod: Attribute.String;
+    supplier: Attribute.String;
+    supervisor: Attribute.String;
+    catchMethod: Attribute.String;
+    productionTime: Attribute.DateTime;
+    expiry: Attribute.Date;
+    location: Attribute.String;
+    batchCode: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::qr-code-data.qr-code-data',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::qr-code-data.qr-code-data',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -830,6 +867,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::qr-code.qr-code': ApiQrCodeQrCode;
+      'api::qr-code-data.qr-code-data': ApiQrCodeDataQrCodeData;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

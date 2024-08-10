@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "qr_codes_data",
+  "info": {
+    "singularName": "qr-code-data",
+    "pluralName": "qr-codes-data",
+    "displayName": "QR Data"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "processingMethod": {
+      "type": "string"
+    },
+    "supplier": {
+      "type": "string"
+    },
+    "supervisor": {
+      "type": "string"
+    },
+    "catchMethod": {
+      "type": "string"
+    },
+    "productionTime": {
+      "type": "datetime"
+    },
+    "expiry": {
+      "type": "date"
+    },
+    "location": {
+      "type": "string"
+    },
+    "batchCode": {
+      "type": "string"
+    }
+  }
+}
