@@ -4,7 +4,8 @@
   "info": {
     "singularName": "qr-code-data",
     "pluralName": "qr-codes-data",
-    "displayName": "QR Data"
+    "displayName": "QR Data",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -37,6 +38,17 @@
     },
     "batchCode": {
       "type": "string"
+    },
+    "StartingRange": {
+      "type": "string"
+    },
+    "EndingRange": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::qr-code.qr-code"
     }
   }
 }

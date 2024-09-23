@@ -8,13 +8,18 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "code": {
       "type": "string",
       "unique": true
+    },
+    "form_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::qr-code-data.qr-code-data"
     }
   }
 }

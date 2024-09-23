@@ -376,12 +376,13 @@ export interface ApiQrCodeQrCode extends Schema.CollectionType {
   attributes: {
     code: Attribute.String & Attribute.Unique;
     form_id: Attribute.Relation<
-      'api::qr-code.qr-code',
-      'oneToOne',
-      'api::qr-code-data.qr-code-data'
-    >;
+    'api::qr-code.qr-code',
+    'oneToOne',
+    'api::qr-code-data.qr-code-data'
+  >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::qr-code.qr-code',
       'oneToOne',
@@ -420,11 +421,6 @@ export interface ApiQrCodeDataQrCodeData extends Schema.CollectionType {
     batchCode: Attribute.String;
     StartingRange: Attribute.String;
     EndingRange: Attribute.String;
-    uid: Attribute.Relation<
-      'api::qr-code-data.qr-code-data',
-      'oneToOne',
-      'api::qr-code.qr-code'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -879,7 +875,6 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::qr-code.qr-code': ApiQrCodeQrCode;
-      'api::qr-code-data.qr-code-data': ApiQrCodeDataQrCodeData;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
